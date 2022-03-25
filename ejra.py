@@ -4,7 +4,15 @@ class NewYork:
 
     def __init__(self):
         self.edificios = [edificio(name) for name in ["Edificio A", "Edificio B"]] 
-        self.empleado = [empleado(name) for name in ["Sres. Martin", "Salim"]]
+        self.empleado = [empleado(name) for name in ["Sr. Martin", "Sr. Salim"]]
+
+class LosAngeles:
+    def resiste(self): 
+        print("Destruccion Los Angeles") 
+
+    def __init__(self):
+        self.edificios = [edificio(name) for name in ["Edificio C"]] 
+        self.empleado = [empleado(name) for name in ["Sra. Xing"]]
  
 class edificio: 
     def __del__(self): 
@@ -20,5 +28,13 @@ class empleado:
     def __init__(self, name): 
         self.name = name 
     
-ny = NewYork()
-del ny
+
+ciudad = input("Que ciudad quiere destruir, NY o LA?")
+if ciudad == "NY" or ciudad == "ny":
+    ny = NewYork()
+    del ny
+elif ciudad == "LA" or ciudad == "la":
+    la = LosAngeles()
+    del la
+else:
+    print("No es una ciudad válida")
