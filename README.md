@@ -33,3 +33,21 @@ class empleado:
 
 El recolector de basura es una entidad que monitoriza las áreas de memoria y las libera cuando ya no se hace ninguna referencia a ellas, por esto mismo, la clase "Yang", sí que se elimina cuando se le ordena, pero la funcion __del__() no se ejecuta hasta el final.
 Una manera de explicar esto, sería poner del(yang) una línea antes que print(yang). Esto daría error ya que la calse "Yang" ya ha sido destruida y no se puede imprimir, a continuación sí que se ejecutaría la funcion __del__() y se imprimiría el mensaje "Yang destruido", pero ya no se imprimiría la "?" debido al error.
+
+La manera que he encontrado para que la interrogación vaya al final es la siguiente:
+```
+class Yin: pass 
+class Yang: 
+    def __del__(self): 
+        print("Yang destruido")
+        print("?")
+ 
+yin = Yin() 
+yang = Yang() 
+yin.yang = yang 
+ 
+print(yang) 
+print(yang is yin.yang)
+del(yang)
+```
+
