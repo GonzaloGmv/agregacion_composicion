@@ -27,14 +27,3 @@ class empleado:
  
     def __init__(self, name): 
         self.name = name 
-    
-
-ciudad = input("Que ciudad quiere destruir, NY o LA?")
-if ciudad == "NY" or ciudad == "ny":
-    ny = NewYork()
-    del ny
-elif ciudad == "LA" or ciudad == "la":
-    la = LosAngeles()
-    del la
-else:
-    print("No es una ciudad válida")
