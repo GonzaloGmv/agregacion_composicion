@@ -62,9 +62,24 @@ El UML de este código sería el siguiente:
 
 # Ejercicio c. Alternativa a la herencia múltiple
 
-El UML de este ejercicio es el siguiente:
-
 El código de este ejercicio es el siguiente:
+```
+class pared: 
+    def __init__(self, orientacion):
+        self.orientacion=orientacion
+
+class ventana(pared): 
+    def __init__(self, orientacion, superficie):
+        super().__init__(orientacion)
+        self.superficie=superficie
+
+class casa(ventana):
+    def __init__(self, paredes, orientacion, superficie):
+        super().__init__(orientacion, superficie)
+        self.paredes=paredes
+    def superficieacristalada(self):
+        return (self.paredes.superficie)
+```      
 
 # main
 
