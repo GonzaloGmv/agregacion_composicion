@@ -62,6 +62,10 @@ El UML de este código sería el siguiente:
 
 # Ejercicio c. Alternativa a la herencia múltiple
 
+El UML de este ejercicio es el siguiente:
+
+![ejr3](https://user-images.githubusercontent.com/91721237/160992843-3135b244-732b-42d0-9950-d2ffa1ecd91d.png)
+
 El código de este ejercicio es el siguiente:
 ```
 class pared: 
